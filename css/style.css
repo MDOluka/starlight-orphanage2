@@ -99,3 +99,50 @@ body{
 @media(max-width:1100px){.children-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){.main-nav{display:none}.nav-toggle{display:block}.children-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.children-grid{grid-template-columns:1fr}}
+
+/* Ensure all sections fit within the viewport */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
+/* Fix impact stats layout on small screens */
+.impact-stats {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to move to new lines */
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.impact-stat {
+  flex: 1 1 150px; /* Flexible and wraps nicely */
+  max-width: 250px;
+}
+
+/* Make numbers and text adapt */
+.impact-stat h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+.impact-stat p {
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .impact-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-stat {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
