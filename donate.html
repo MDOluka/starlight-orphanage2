@@ -7,17 +7,20 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <meta name="description" content="Support Starlight Orphanage — donate through MTN, Airtel, or Bank transfer to bring hope to children in Jinja, Uganda.">
+
   <style>
+    /* Donate Container */
     .donate-container {
-      max-width: 850px;
-      margin: 60px auto;
+      max-width: 900px;
+      width: 95%;
+      margin: 40px auto;
       background: #fafafa;
       border-radius: 12px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-      padding: 40px 30px;
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
 
     .donate-container h2 {
@@ -29,12 +32,12 @@
 
     .donation-item {
       display: flex;
-      align-items: flex-start;
+      flex-wrap: wrap;
       gap: 16px;
-      background: #fff;
+      padding: 18px;
+      border-radius: 12px;
       border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 18px 20px;
+      background: #fff;
       transition: box-shadow 0.2s ease;
     }
 
@@ -43,16 +46,18 @@
     }
 
     .donation-logo {
+      flex: 0 0 70px;
       width: 70px;
       height: 70px;
       object-fit: contain;
-      background: #f3f3f3;
       border-radius: 8px;
-      padding: 10px;
+      background: #f3f3f3;
+      padding: 8px;
     }
 
     .donation-details {
-      flex: 1;
+      flex: 1 1 0;
+      min-width: 0;
     }
 
     .donation-details h3 {
@@ -65,8 +70,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #f2f2f2;
+      flex-wrap: wrap;
       padding: 6px 0;
+      border-bottom: 1px solid #f2f2f2;
     }
 
     .detail-line strong {
@@ -74,39 +80,44 @@
     }
 
     .copy-btn {
+      flex-shrink: 0;
+      margin-left: 8px;
+      border: none;
+      background: none;
       cursor: pointer;
       font-size: 1rem;
       color: #666;
-      border: none;
-      background: none;
-      margin-left: 8px;
       transition: color 0.2s ease;
     }
 
-    .copy-btn:hover {
-      color: #ff6b00;
+    .copy-btn:hover { color: #ff6b00; }
+    .copy-btn.copied { color: #28a745; }
+
+    @media(max-width: 600px){
+      .donation-item {flex-direction: column; align-items: stretch;}
+      .donation-logo {width: 100%; height: auto; margin-bottom: 12px;}
+      .detail-line {flex-direction: column; align-items: flex-start;}
+      .copy-btn {margin-left: 0; margin-top: 4px;}
     }
 
-    .copy-btn.copied {
-      color: #28a745;
-    }
-
+    /* CTA */
     .cta {
-      background-color: #ff6b00;
-      color: white;
+      background-color: #faf7f7;
+      margin:36px 0;
       text-align: center;
-      padding: 60px 20px;
-      width: 100%;
+      padding: 40px 20px;
+      border-radius: 12px;
     }
+
+    .cta h3 { margin-bottom: 14px; color:#161515; }
   </style>
 </head>
 
 <body>
- <!-- NAV -->
+  <!-- NAV -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">🌟 <span>Starlight Jinja Orphanage</span></a>
-
       <nav class="main-nav" aria-label="Primary">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
@@ -114,11 +125,8 @@
         <a href="programs.html" class="nav-link">Programs</a>
         <a href="gallery.html" class="nav-link">Gallery</a>
         <a href="contact.html" class="nav-link">Contact</a>
-
-        <!-- Donate as last item and styled as a solid orange button -->
         <a href="donate.html" class="nav-link active donate-btn" style="margin-left:8px;">Donate</a>
       </nav>
-
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
@@ -133,36 +141,35 @@
 
   <!-- DONATION DETAILS -->
   <main class="donate-container container">
-    <h2>Donation Details, Click Icon To Copy Detail</h2>
+    <h2>Donation Details — Click Icon To Copy</h2>
 
-    <!-- MTN -->
+    <!-- Western Union -->
     <div class="donation-item">
-      <img src="images/western.png" alt="MTN Logo" class="donation-logo">
+      <img src="images/western.png" alt="Western Union Logo" class="donation-logo">
       <div class="donation-details">
         <h3>Western Union</h3>
-        <div class="detail-line"><strong>Link:</strong>https://www.westernunion.com/us/en/web/send-money/start
- <button class="copy-btn" data-text="https://www.westernunion.com/us/en/web/send-money/start">📋</button></div>
- <div class="detail-line"><strong>Name:</strong>Nyende Faizo
- <button class="copy-btn" data-text="Nyend Faizo">📋</button></div>
+        <div class="detail-line"><strong>Link:</strong> https://www.westernunion.com <button class="copy-btn" data-text="https://www.westernunion.com">📋</button></div>
+        <div class="detail-line"><strong>Name:</strong> Nyende Faizo <button class="copy-btn" data-text="Nyende Faizo">📋</button></div>
         <div class="detail-line"><strong>Phone:</strong> +256 706 492026 <button class="copy-btn" data-text="+256 706 492026">📋</button></div>
         <div class="detail-line"><strong>Address:</strong> Jinja <button class="copy-btn" data-text="Jinja">📋</button></div>
-        <div class="detail-line"><strong>Country:</strong>Uganda <button class="copy-btn" data-text="Uganda">📋</button></div>
+        <div class="detail-line"><strong>Country:</strong> Uganda <button class="copy-btn" data-text="Uganda">📋</button></div>
         <div class="detail-line"><strong>Reason:</strong> Family Help <button class="copy-btn" data-text="Family Help">📋</button></div>
       </div>
     </div>
 
-    <!-- Airtel -->
+    <!-- Airtel Money -->
     <div class="donation-item">
       <img src="images/airtel.png" alt="Airtel Logo" class="donation-logo">
       <div class="donation-details">
         <h3>Airtel Money</h3>
-        <div class="detail-line"><strong>Name:</strong>Nyende Faizo <button class="copy-btn" data-text="Nyenda Faizo">📋</button></div>
+        <div class="detail-line"><strong>Name:</strong> Nyende Faizo <button class="copy-btn" data-text="Nyende Faizo">📋</button></div>
         <div class="detail-line"><strong>Phone:</strong> +256 706 492026 <button class="copy-btn" data-text="+256 706 492026">📋</button></div>
         <div class="detail-line"><strong>Reason:</strong> Family Help <button class="copy-btn" data-text="Family Help">📋</button></div>
       </div>
     </div>
 
-    <!-- Bank 
+    <!-- Bank example (optional) -->
+    <!--
     <div class="donation-item">
       <img src="images/equity.png" alt="Bank Logo" class="donation-logo">
       <div class="donation-details">
@@ -172,27 +179,27 @@
         <div class="detail-line"><strong>Account Number:</strong> 01XXXXXXXXXX <button class="copy-btn" data-text="01XXXXXXXXXX">📋</button></div>
         <div class="detail-line"><strong>Swift Code:</strong> SBICUGKXXXX <button class="copy-btn" data-text="SBICUGKXXXX">📋</button></div>
       </div>
-    </div> -->
+    </div>
+    -->
   </main>
 
-  <!-- CTA (same as other pages — consistent) -->
-  <section class="cta" style="margin:36px 0; background-color: #faf7f7;">
-    <div class="container cta-inner" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 20px;">
-      <h3 style="margin:0;color:#161515;">Help us give every child a brighter future</h3>
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h3>Help us give every child a brighter future</h3>
       <a href="donate.html" class="btn primary large">Donate Now</a>
     </div>
   </section>
 
- <!-- FOOTER -->
-  <footer class="site-footer" style="margin-top:18px;">
+  <!-- FOOTER -->
+  <footer class="site-footer">
     <div class="container footer-grid" style="align-items:start;">
       <div>
         <h4>Starlight Jinja Orphanage</h4>
         <p>Buwenge, Jinja, Uganda</p>
         <p><a href="mailto:info@starlightjinjaorphanage.com">info@starlightjinjaorphanage.com</a></p>
-        <p><h4>+256 706 492026</h4></p>
+        <p><strong>+256 706 492026</strong></p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
         <nav>
@@ -202,7 +209,6 @@
           <a href="donate.html">Donate</a>
         </nav>
       </div>
-
       <div>
         <h4>Follow</h4>
         <div class="socials" style="display:flex;gap:10px;margin-top:8px;">
@@ -212,16 +218,14 @@
         </div>
       </div>
     </div>
-
     <div style="background:rgba(0,0,0,0.05);padding:14px 0;text-align:center;margin-top:18px;">
       <div class="container" style="padding:0;">
         © 2025 Starlight Jinja Orphanage — All rights reserved.
       </div>
     </div>
   </footer>
-  
-<script src="js/app.js" defer></script>
 
+  <script src="js/app.js" defer></script>
   <script>
     // Copy button logic
     document.querySelectorAll('.copy-btn').forEach(btn => {
