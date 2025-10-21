@@ -121,13 +121,22 @@ body{
 .video-wrap video{width:100%;height:auto;display:block;background:#000}
 .modal-close{position:absolute;top:8px;right:10px;background:transparent;border:0;color:#fff;font-size:20px;padding:6px 10px;cursor:pointer}
 
-/* Donate Form Responsive Fix */
+/* Donation Section Container */
+.donate-container {
+  max-width: 900px; /* restrict the overall form width */
+  width: 90%;       /* responsive width */
+  margin: 0 auto;   /* center horizontally */
+  padding: 20px;    /* inner spacing */
+  box-sizing: border-box;
+}
+
+/* Donate Form */
 .copy-field {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  flex-wrap: wrap; /* allows stacking on small screens */
+  flex-wrap: wrap;   /* allow stacking on small screens */
 }
 
 .copy-field input,
@@ -137,7 +146,7 @@ body{
   border-radius: 8px;
   border: 1px solid #ddd;
   font-family: inherit;
-  min-width: 0; /* prevents overflow in flex */
+  min-width: 0; /* prevents overflow inside flex */
 }
 
 .copy-btn {
@@ -151,7 +160,7 @@ body{
   padding: 8px 12px;
   cursor: pointer;
   transition: opacity 0.2s;
-  flex-shrink: 0; /* ensures button doesn't shrink too small */
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -166,7 +175,7 @@ body{
   }
 
   .copy-btn {
-    width: 100%; /* make button full-width on mobile */
+    width: 100%; /* button full-width on mobile */
     justify-content: center;
   }
 }
