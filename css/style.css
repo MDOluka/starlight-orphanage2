@@ -121,70 +121,78 @@ body{
 .video-wrap video{width:100%;height:auto;display:block;background:#000}
 .modal-close{position:absolute;top:8px;right:10px;background:transparent;border:0;color:#fff;font-size:20px;padding:6px 10px;cursor:pointer}
 
-/* Donation Section Container */
-.donate-container {
-  max-width: 900px;  /* restrict overall width */
-  width: 90%;        /* responsive */
-  margin: 0 auto;    /* center */
-  padding: 0 16px;   /* inner padding */
-  box-sizing: border-box;
-}
-
-/* Donate Form Row */
-.copy-field {
+/* Donation Items Responsive Fix */
+.donation-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;     /* allow stacking on small screens */
-  width: 100%;         /* full width */
+  flex-wrap: wrap;        /* allow stacking on small screens */
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: box-shadow 0.2s ease;
 }
 
-/* Input / Textarea */
-.copy-field input,
-.copy-field textarea {
-  flex: 1 1 auto;      /* grow and shrink */
-  min-width: 0;        /* critical to prevent overflow */
-  padding: 10px 12px;
+.donation-logo {
+  flex: 0 0 70px;         /* logo fixed width, does not shrink below 70px */
+  height: 70px;
+  object-fit: contain;
+  background: #f3f3f3;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  font-family: inherit;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 10px;
 }
 
-/* Copy Button */
-.copy-btn {
-  flex-shrink: 0;      /* prevents shrinking too small */
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: none;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: #fff;
+.donation-details {
+  flex: 1 1 auto;         /* flexible and wraps correctly */
+  min-width: 0;           /* critical to prevent overflow */
+}
+
+/* Make detail lines wrap nicely */
+.detail-line {
   display: flex;
+  flex-wrap: wrap;        /* stack content if needed */
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 6px 0;
+}
+
+/* Copy button responsive */
+.copy-btn {
+  flex-shrink: 0;
+  margin-left: 8px;
   cursor: pointer;
-  transition: opacity 0.2s;
 }
 
-/* Hover */
-.copy-btn:hover {
-  opacity: 0.9;
-}
-
-/* Mobile-specific adjustments */
+/* Mobile stacking */
 @media (max-width: 600px) {
-  .copy-field {
-    flex-direction: column;  /* stack input above button */
+  .donation-item {
+    flex-direction: column;
     align-items: stretch;
   }
 
+  .donation-logo {
+    margin-bottom: 12px;
+    width: 100%;
+    height: auto;
+  }
+
+  .donation-details {
+    width: 100%;
+  }
+
+  .detail-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .copy-btn {
-    width: 100%;            /* full width button on mobile */
-    justify-content: center;
+    margin-left: 0;
+    margin-top: 4px;
   }
 }
+
 
 
 /* Footer */
