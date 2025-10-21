@@ -123,59 +123,65 @@ body{
 
 /* Donation Section Container */
 .donate-container {
-  max-width: 900px; /* restrict the overall form width */
-  width: 90%;       /* responsive width */
-  margin: 0 auto;   /* center horizontally */
-  padding: 20px;    /* inner spacing */
+  max-width: 900px;  /* restrict overall width */
+  width: 90%;        /* responsive */
+  margin: 0 auto;    /* center */
+  padding: 0 16px;   /* inner padding */
   box-sizing: border-box;
 }
 
-/* Donate Form */
+/* Donate Form Row */
 .copy-field {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  flex-wrap: wrap;   /* allow stacking on small screens */
+  flex-wrap: wrap;     /* allow stacking on small screens */
+  width: 100%;         /* full width */
 }
 
+/* Input / Textarea */
 .copy-field input,
 .copy-field textarea {
-  flex: 1;
+  flex: 1 1 auto;      /* grow and shrink */
+  min-width: 0;        /* critical to prevent overflow */
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
   font-family: inherit;
-  min-width: 0; /* prevents overflow inside flex */
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Copy Button */
 .copy-btn {
+  flex-shrink: 0;      /* prevents shrinking too small */
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
   cursor: pointer;
   transition: opacity 0.2s;
-  flex-shrink: 0;
 }
 
+/* Hover */
 .copy-btn:hover {
   opacity: 0.9;
 }
 
-/* Mobile adjustments */
+/* Mobile-specific adjustments */
 @media (max-width: 600px) {
   .copy-field {
-    flex-direction: column; /* stack input above button */
+    flex-direction: column;  /* stack input above button */
     align-items: stretch;
   }
 
   .copy-btn {
-    width: 100%; /* button full-width on mobile */
+    width: 100%;            /* full width button on mobile */
     justify-content: center;
   }
 }
