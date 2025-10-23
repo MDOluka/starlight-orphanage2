@@ -24,7 +24,7 @@ body{
 .container{width:90%;max-width:var(--max);margin:0 auto;padding:24px 0}
 
 /* Header */
-.site-header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.08)}
+.site-header{position:sticky;top:0;z-index:999;background:rgba(245, 121, 6, 0.95);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,0.08)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
 .brand{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--primary);font-size:1.2rem}
 .brand span{color:var(--text)}
@@ -197,7 +197,7 @@ body{
 
 /* Footer */
 .site-footer {
-  background:#071022;
+  background:#fa7609;
   color:#dbeafe;
   padding:28px 0;
   margin-top:36px;
